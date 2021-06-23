@@ -1,7 +1,7 @@
 #!/bin/sh
 
-#
-# standard tool
-#
-/usr/bin/invoke_app "$@" -t jupyterexamples \
-                         -C rappture
+/usr/bin/invoke_app "$@" -C "start_jupyter -T @tool Index.ipynb" \
+                         -u anaconda-6 \
+                         -r none \
+                         -e LD_LIBRARY_PATH=@tool/lib:${LD_LIBRARY_PATH}
+
